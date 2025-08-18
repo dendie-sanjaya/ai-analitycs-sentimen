@@ -1,4 +1,5 @@
-## AI Service Analytics Sentiment Produc
+## AI Service Analytics Sentiment Product
+This system analyzes product comments to transform text data into valuable insights on customer sentiment. By automatically classifying comments, it provides a clear overview of consumer opinions, helping you make better business decisions.
 
 ### Table of Contents
 1.  **Introduction**
