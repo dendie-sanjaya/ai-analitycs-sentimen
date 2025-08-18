@@ -27,19 +27,15 @@ The system operates in a clear, sequential flow. First, a labeled dataset is use
 
 ### 3. Core Components
 
-#### Data Set & Labeling (`dataset.csv`)
+#### 3.1 Data Set & Labeling (`dataset.csv`)
 
 This is the foundation of our system. It's an Excel file containing raw text data (comments) that has been manually labeled with sentiment scores (e.g., positive, negative, neutral). This labeled data is crucial for teaching our AI model what different sentiments look like.
 
-* *Insert Screenshot Here (e.g., of the `dataset.csv` file)*
-* 
 ![ss](./ss/5.jpg)
 
-#### Training AI Model (`training.py`)
+#### 3.2 Training AI Model (`training.py`)
 
 The `training.py` script uses the labeled `dataset.csv` to train an AI model. It learns the patterns and keywords associated with each sentiment category. The output of this process is a trained model file.
-
-* *Insert Screenshot Here (e.g., of the `training.py` code or the terminal output showing a successful training run)*
 
 ![ss](./ss/6.jpg)
 
@@ -47,15 +43,11 @@ The `training.py` script uses the labeled `dataset.csv` to train an AI model. It
 
 This is the result of the training process. The `.pkl` file is a saved, ready-to-use AI model. Instead of retraining the model every time, we can simply load this file to use its predictive capabilities.
 
-* *Insert Screenshot Here (e.g., of the `sentiment_model.pkl` file in the folder)*
-
 ![ss](./ss/7.jpg)
 
-#### Data & Comments (SQL Database)
+#### 3.3 Data & Comments (SQL Database)
 
 This component is the database where product and comment information is stored. The comments are the raw data that our system will analyze. The `calculate.py` script will query this database to get the comments.
-
-* *Insert Screenshot Here (e.g., of the database schema or a table with product and comment data)*
 
 ![ss](./ss/1.jpg)
 
@@ -65,24 +57,20 @@ This component is the database where product and comment information is stored. 
 
 ![ss](./ss/4.jpg)
 
-#### Calculate Sentiment (`calculate.py`)
+#### 3.4 Calculate Sentiment (`calculate.py`)
 
 The `calculate.py` script acts as the core logic. It reads comments from the SQL database, loads the AI model (`sentiment_model.pkl`), and uses it to predict the sentiment of each comment. It then aggregates the results, counting the number of positive, neutral, and negative comments.
 
-* *Insert Screenshot Here (e.g., of the `calculate.py` code)*
-
-#### API Service (`api.py`)
+#### 3.5 API Service (`api.py`)
 
 The `api.py` script provides the REST API endpoint. It links the sentiment calculation logic to the outside world. An external application can send a request to this API (e.g., `GET /sentiment/{product_id}`), and the service will run `calculate.py` to return the sentiment analysis in a JSON format.
 
-* *Insert Screenshot Here (e.g., of the `api.py` code)*
 ![ss](./ss/8.jpg)
 
-#### Application
+#### 3.6 Application
 
 This is the final user-facing part of the system. The application (e.g., a website or a mobile app) sends a request to the API Service. It then receives the sentiment data and displays it to the user, for example, by showing a chart or a summary of customer feedback.
 
-* *Insert Screenshot Here (e.g., of the application's user interface displaying the sentiment results)*
 ![ss](./ss/9.jpg)
 
 ### 4. How It Works
