@@ -27,6 +27,12 @@ The system operates in a clear, sequential flow. First, a labeled dataset is use
 
 ### 3. Core Components
 
+### Prepare Install Lib Python
+
+Before run code, please install dependency lib python ini file  equirements.txt
+
+```pip install -r requirements.txt```
+
 #### 3.1 Data Set & Labeling (`dataset.csv`)
 
 This is the foundation of our system. It's an Excel file containing raw text data (comments) that has been manually labeled with sentiment scores (e.g., positive, negative, neutral). This labeled data is crucial for teaching our AI model what different sentiments look like.
